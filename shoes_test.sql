@@ -30,7 +30,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: brands; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: brands; Type: TABLE; Schema: public; Owner: chitra; Tablespace: 
 --
 
 CREATE TABLE brands (
@@ -39,10 +39,10 @@ CREATE TABLE brands (
 );
 
 
-ALTER TABLE brands OWNER TO "Guest";
+ALTER TABLE public.brands OWNER TO chitra;
 
 --
--- Name: brands_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+-- Name: brands_id_seq; Type: SEQUENCE; Schema: public; Owner: chitra
 --
 
 CREATE SEQUENCE brands_id_seq
@@ -53,17 +53,17 @@ CREATE SEQUENCE brands_id_seq
     CACHE 1;
 
 
-ALTER TABLE brands_id_seq OWNER TO "Guest";
+ALTER TABLE public.brands_id_seq OWNER TO chitra;
 
 --
--- Name: brands_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+-- Name: brands_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: chitra
 --
 
 ALTER SEQUENCE brands_id_seq OWNED BY brands.id;
 
 
 --
--- Name: brands_stores; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: brands_stores; Type: TABLE; Schema: public; Owner: chitra; Tablespace: 
 --
 
 CREATE TABLE brands_stores (
@@ -73,10 +73,10 @@ CREATE TABLE brands_stores (
 );
 
 
-ALTER TABLE brands_stores OWNER TO "Guest";
+ALTER TABLE public.brands_stores OWNER TO chitra;
 
 --
--- Name: brands_stores_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+-- Name: brands_stores_id_seq; Type: SEQUENCE; Schema: public; Owner: chitra
 --
 
 CREATE SEQUENCE brands_stores_id_seq
@@ -87,17 +87,17 @@ CREATE SEQUENCE brands_stores_id_seq
     CACHE 1;
 
 
-ALTER TABLE brands_stores_id_seq OWNER TO "Guest";
+ALTER TABLE public.brands_stores_id_seq OWNER TO chitra;
 
 --
--- Name: brands_stores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+-- Name: brands_stores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: chitra
 --
 
 ALTER SEQUENCE brands_stores_id_seq OWNED BY brands_stores.id;
 
 
 --
--- Name: stores; Type: TABLE; Schema: public; Owner: Guest; Tablespace: 
+-- Name: stores; Type: TABLE; Schema: public; Owner: chitra; Tablespace: 
 --
 
 CREATE TABLE stores (
@@ -106,10 +106,10 @@ CREATE TABLE stores (
 );
 
 
-ALTER TABLE stores OWNER TO "Guest";
+ALTER TABLE public.stores OWNER TO chitra;
 
 --
--- Name: stores_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+-- Name: stores_id_seq; Type: SEQUENCE; Schema: public; Owner: chitra
 --
 
 CREATE SEQUENCE stores_id_seq
@@ -120,38 +120,38 @@ CREATE SEQUENCE stores_id_seq
     CACHE 1;
 
 
-ALTER TABLE stores_id_seq OWNER TO "Guest";
+ALTER TABLE public.stores_id_seq OWNER TO chitra;
 
 --
--- Name: stores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+-- Name: stores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: chitra
 --
 
 ALTER SEQUENCE stores_id_seq OWNED BY stores.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
+-- Name: id; Type: DEFAULT; Schema: public; Owner: chitra
 --
 
 ALTER TABLE ONLY brands ALTER COLUMN id SET DEFAULT nextval('brands_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
+-- Name: id; Type: DEFAULT; Schema: public; Owner: chitra
 --
 
 ALTER TABLE ONLY brands_stores ALTER COLUMN id SET DEFAULT nextval('brands_stores_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: Guest
+-- Name: id; Type: DEFAULT; Schema: public; Owner: chitra
 --
 
 ALTER TABLE ONLY stores ALTER COLUMN id SET DEFAULT nextval('stores_id_seq'::regclass);
 
 
 --
--- Data for Name: brands; Type: TABLE DATA; Schema: public; Owner: Guest
+-- Data for Name: brands; Type: TABLE DATA; Schema: public; Owner: chitra
 --
 
 COPY brands (id, brand_name) FROM stdin;
@@ -159,93 +159,42 @@ COPY brands (id, brand_name) FROM stdin;
 
 
 --
--- Name: brands_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+-- Name: brands_id_seq; Type: SEQUENCE SET; Schema: public; Owner: chitra
 --
 
-SELECT pg_catalog.setval('brands_id_seq', 271, true);
+SELECT pg_catalog.setval('brands_id_seq', 29, true);
 
 
 --
--- Data for Name: brands_stores; Type: TABLE DATA; Schema: public; Owner: Guest
+-- Data for Name: brands_stores; Type: TABLE DATA; Schema: public; Owner: chitra
 --
 
 COPY brands_stores (id, brand_id, store_id) FROM stdin;
-1	70	2
-2	79	3
-3	88	4
-4	97	5
-5	98	6
-6	107	8
-7	108	9
-8	108	10
-9	117	11
-10	118	12
-11	118	13
-12	127	14
-13	128	15
-14	128	16
-15	137	27
-16	138	28
-17	138	29
-18	147	30
-19	148	31
-20	148	32
-21	157	34
-22	158	35
-23	158	36
-24	167	38
-25	168	39
-26	168	40
-27	177	42
-28	178	43
-29	178	44
-30	187	48
-31	188	49
-32	188	50
-33	197	61
-34	198	62
-35	198	63
-36	207	72
-37	208	73
-38	208	74
-39	217	85
-40	218	86
-41	218	87
-42	219	96
-43	228	97
-44	229	98
-45	229	99
-46	230	108
-47	239	109
-48	240	110
-49	240	111
-50	241	120
-51	242	121
-52	243	121
-53	252	122
-54	253	123
-55	253	124
-56	254	133
-57	255	134
-58	256	134
-59	266	137
-60	267	138
-61	267	139
-62	268	148
-63	269	149
-64	270	149
+9	14	16
+10	15	16
+11	13	14
+12	14	14
+13	13	13
+14	15	13
+15	13	16
+16	24	17
+17	25	18
+18	25	19
+19	26	28
+20	27	29
+21	28	29
 \.
 
 
 --
--- Name: brands_stores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+-- Name: brands_stores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: chitra
 --
 
-SELECT pg_catalog.setval('brands_stores_id_seq', 64, true);
+SELECT pg_catalog.setval('brands_stores_id_seq', 21, true);
 
 
 --
--- Data for Name: stores; Type: TABLE DATA; Schema: public; Owner: Guest
+-- Data for Name: stores; Type: TABLE DATA; Schema: public; Owner: chitra
 --
 
 COPY stores (id, store_name) FROM stdin;
@@ -253,14 +202,14 @@ COPY stores (id, store_name) FROM stdin;
 
 
 --
--- Name: stores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+-- Name: stores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: chitra
 --
 
-SELECT pg_catalog.setval('stores_id_seq', 151, true);
+SELECT pg_catalog.setval('stores_id_seq', 31, true);
 
 
 --
--- Name: brands_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: brands_pkey; Type: CONSTRAINT; Schema: public; Owner: chitra; Tablespace: 
 --
 
 ALTER TABLE ONLY brands
@@ -268,7 +217,7 @@ ALTER TABLE ONLY brands
 
 
 --
--- Name: brands_stores_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: brands_stores_pkey; Type: CONSTRAINT; Schema: public; Owner: chitra; Tablespace: 
 --
 
 ALTER TABLE ONLY brands_stores
@@ -276,7 +225,7 @@ ALTER TABLE ONLY brands_stores
 
 
 --
--- Name: stores_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest; Tablespace: 
+-- Name: stores_pkey; Type: CONSTRAINT; Schema: public; Owner: chitra; Tablespace: 
 --
 
 ALTER TABLE ONLY stores
@@ -284,12 +233,12 @@ ALTER TABLE ONLY stores
 
 
 --
--- Name: public; Type: ACL; Schema: -; Owner: epicodus
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM epicodus;
-GRANT ALL ON SCHEMA public TO epicodus;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 

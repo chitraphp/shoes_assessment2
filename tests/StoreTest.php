@@ -6,7 +6,9 @@
     require_once "src/Store.php";
     require_once "src/Brand.php";
 
-    $DB = new PDO('pgsql:host=localhost;dbname=shoes_test', 'chitra', '1234');
+    //$DB = new PDO('pgsql:host=localhost;dbname=shoes_test', 'chitra', '1234');
+    $DB = new PDO('pgsql:host=localhost;dbname=shoes_test');
+
     class StoreTest extends PHPUnit_Framework_TestCase
     {
         protected function tearDown()

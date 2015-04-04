@@ -11,7 +11,8 @@
     $app['debug'] = TRUE;
 
     //add authentication for chitra user
-    $DB = new PDO('pgsql:host=localhost;dbname=shoes', 'chitra', '1234');
+    //$DB = new PDO('pgsql:host=localhost;dbname=shoes', 'chitra', '1234');
+    $DB = new PDO('pgsql:host=localhost;dbname=shoes');
 
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
